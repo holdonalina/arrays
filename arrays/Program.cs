@@ -2,15 +2,21 @@
 
 int[] numbers = { -9, 0, -2, 101, 57, 89, 18 };
 
-int max = numbers[0];
+int max = int.MinValue;
+int secondMax = int.MinValue;
 
-for (int i = 1; i < numbers.Length; i++)
+for (int i = 0; i < numbers.Length; i++)
 {
   if (numbers[i] > max)
   {
+    secondMax = max;
     max = numbers[i];
+  }
+  else if (numbers[i] > secondMax && numbers[i] != max)
+  {
+    secondMax = numbers[i];
   }
 }
 
-Console.WriteLine(max);
+Console.WriteLine(secondMax);
 
